@@ -1,15 +1,21 @@
 import mysql.connector
 from flask import Flask, render_template, request, redirect, url_for, flash
+from dotenv import load_dotenv
+import os
+
+# تحميل متغيرات البيئة من ملف .env
+load_dotenv()
+
 
 app = Flask(__name__)
 app.secret_key = '1422003'  # مفتاح سري لأمان الجلسات
 
 # إعداد الاتصال بقاعدة البيانات
 db = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='',  # تأكد أن كلمة المرور فارغة إذا لم تقم بتغييرها
-    database='portfolio_db'
+    host=os.getenv("CC_DB_HOST"),
+    user=os.getenv("CC_DB_USER"),
+    password=os.getenv("CC_DB_PASSWORD"),
+    database=os.getenv("CC_DB_NAME")
 )
 
 # المسار الرئيسي (Home)
@@ -42,5 +48,7 @@ def contact():
 
     return render_template('contact.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# Vercel تحتاج إلى استدعاء متغير التطبيق مباشرة
+app = app
+
+
