@@ -23,10 +23,10 @@ db = psycopg2.connect(
 def home():
     return render_template('index.html')
 
-# مسار صفحة "About"
-@app.route('/about')
-def about():
-    return render_template('about.html')
+# # مسار صفحة "About"
+# @app.route('/about')
+# def about():
+#     return render_template('about.html')
 
 # مسار صفحة "Contact"
 @app.route('/contact', methods=['GET', 'POST'])
