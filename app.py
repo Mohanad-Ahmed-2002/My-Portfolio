@@ -1,5 +1,5 @@
 import os
-import mysql.connector
+import psycopg2
 from flask import Flask, render_template, request, redirect, url_for, flash
 from dotenv import load_dotenv
 
@@ -7,15 +7,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = os.getenv('1422003')
+app.secret_key = os.getenv('SECRET_KEY')
 
-# إعداد الاتصال بقاعدة البيانات
-db = mysql.connector.connect(
+# الاتصال بقاعدة البيانات باستخدام المتغيرات البيئية
+db = psycopg2.connect(
     host=os.getenv("DB_HOST"),
+    port=os.getenv("DB_PORT"),
     user=os.getenv("DB_USER"),
     password=os.getenv("DB_PASSWORD"),
-    database=os.getenv("DB_NAME"),
-    port=3306
+    dbname=os.getenv("DB_NAME")
 )
 
 # المسار الرئيسي (Home)
@@ -37,19 +37,26 @@ def contact():
         message = request.form['message']
 
         cursor = db.cursor()
-        cursor.execute(
-            "INSERT INTO users (name, email, message) VALUES (%s, %s, %s)",
-            (name, email, message)
-        )
-        db.commit()
 
-        flash('Your message has been sent successfully!', 'success')
+        # التحقق من وجود البريد الإلكتروني مسبقًا
+        cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
+        existing_user = cursor.fetchone()
+
+        if existing_user:
+            flash('This email is already registered!', 'warning')
+        else:
+            cursor.execute(
+                "INSERT INTO users (name, email, message) VALUES (%s, %s, %s)",
+                (name, email, message)
+            )
+            db.commit()
+            flash('Your message has been sent successfully!', 'success')
+
         return redirect(url_for('contact'))
 
     return render_template('contact.html')
 
+
 # نقطة دخول التطبيق
 if __name__ == '__main__':
     app.run(debug=True)
-
-
