@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 
-<body class="bg-gray-200 min-h-screen">
+<body class="bg-gray-200 min-h-screen"> 
+
 <!-- nav -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center py-4 px-6">
@@ -23,24 +24,44 @@
                 <h1>MA</h1>
             </a>
 
+            <!-- زر القائمة للأجهزة الصغيرة -->
+            <button id="menu-btn" class="md:hidden text-primary focus:outline-none">
+                ☰
+            </button>
 
             <!-- روابط الـ Navbar -->
             <div id="menu-links" class="hidden md:flex gap-6">
-                <a href="#home" class="text-gray-700 hover:text-primary">Home</a>
-                <a href="#skills" class="text-gray-700 hover:text-primary">Skills</a>
-                <a href="#projects" class="text-gray-700 hover:text-primary">Projects</a>
-                <a href="#about" class="text-gray-700 hover:text-primary">About</a>
-                <a href="#contact" class="text-gray-700 hover:text-primary">Contact</a>
+                <a href="#home" class="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">Home</a>
+                <a href="#skills" class="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">Skills</a>
+                <a href="#projects" class="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">Projects</a>
+                <a href="#about" class="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">About</a>
+                <a href="#contact" class="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">Contact</a>
             </div>
         </div>
+        <!-- قائمة الجوال -->
+        <div id="mobile-menu" class="md:hidden hidden flex-col bg-white shadow-md">
+            <a href="#home" class="py-2 px-4 text-gray-800 hover:bg-primary hover:text-white transition-all">Home</a>
+            <a href="#skills" class="py-2 px-4 text-gray-800 hover:bg-primary hover:text-white transition-all">Skills</a>
+            <a href="#projects" class="py-2 px-4 text-gray-800 hover:bg-primary hover:text-white transition-all">Projects</a>
+            <a href="#about" class="py-2 px-4 text-gray-800 hover:bg-primary hover:text-white transition-all">About</a>
+            <a href="#contact" class="py-2 px-4 text-gray-800 hover:bg-primary hover:text-white transition-all">Contact</a>
+        </div>
+        <script>
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        </script>
     </nav>
 
 <!-- Home Page -->
     <div class="container mx-auto px-8 py-16" id="home">
         <div class="grid grid-cols-1 sm:grid-cols-3 items-center bg-white shadow-lg rounded-2xl overflow-hidden">
             <div class="p-8 col-span-2 bg-gradient-to-r from-black/25 to-transparent">
-                <h1 class="text-4xl font-bold text-primary sm:text-3xl">Welcome, To Mohanad's World</h1>
-                <p class="text-gray-700 mt-4 font-bold">
+                <h1 class="text-5xl font-extrabold text-primary sm:text-4xl drop-shadow-md"> Mohanad Ahmed Khalil</h1>
+                <p class="text-gray-800 mt-4 leading-relaxed font-medium">
                     I am a self-taught programmer with a keen interest in computer science, dedicated to creating
                     innovative, user-friendly
                     web solutions. Currently, I am focusing on my studies and education to become a backend developer while
@@ -51,174 +72,209 @@
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
                     <a href="https://www.linkedin.com/in/mohanad-ahmed-ab66b7342/" target="_blank"
-                        class="btn btn-outline btn-primary flex items-center gap-2 w-full sm:w-auto">
+                        class="btn btn-outline btn-primary flex items-center gap-2 w-full sm:w-auto hover:bg-primary hover:text-white transition-all duration-300 shadow-md">
                         <i class="fab fa-linkedin text-xl"></i> LinkedIn
                     </a>
                     <a href="https://github.com/Mohanad-Ahmed-2002" target="_blank"
-                        class="btn btn-outline btn-primary flex items-center gap-2 w-full sm:w-auto">
+                        class="btn btn-outline btn-primary flex items-center gap-2 w-full sm:w-auto hover:bg-primary hover:text-white transition-all duration-300 shadow-md">
                         <i class="fab fa-github text-xl"></i> GitHub
                     </a>
                     <a href="/static/files/resume.pdf" download
-                        class="btn btn-outline btn-primary flex items-center gap-2 w-full sm:w-auto">
+                        class="btn btn-outline btn-primary flex items-center gap-2 w-full sm:w-auto hover:bg-primary hover:text-white transition-all duration-300 shadow-md">
                         <i class="fa-solid fa-file-arrow-down text-xl"></i> CV
                     </a>
                 </div>
 
 
             </div>
-            <div class="h-full">
-                <img src="/static/images/background 1.jpg" alt="Mohanad Ahmed" class="w-full object-cover rounded-r-2xl">
+            <div class="h-full relative">
+                <img src="/static/images/background 1.jpg" alt="Mohanad Ahmed" class="w-full object-cover rounded-r-2xl hover:scale-105 transition-transform duration-500 ease-in-out shadow-md">
             </div>
         </div>
     </div>
 
 <!-- Skills Page -->
-    <div class="text-center my-12" id="skills">
+    <div class="min-h-screen flex flex-col items-center justify-center bg-gray-100 py-16" id="skills">
         <h2
-            class="text-3xl font-bold text-primary uppercase tracking-wide hover:text-blue-500 transition duration-300 mb-15">
+            class="text-4xl font-bold text-primary uppercase tracking-wide hover:text-blue-500 transition duration-300 mb-6">
             Skills
         </h2>
-        <div class="w-16 h-1 bg-primary mx-auto mt-2"></div>
+        <div class="w-16 h-1 bg-primary mx-auto mb-12"></div>
     
-        <div class="flex flex-wrap justify-center gap-20 mt-6 w-full">
-    
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-16 w-full max-w-5xl px-6">
             <!-- HTML -->
-            <div class="flex flex-col items-center p-4">
-                <i class="fa-brands fa-html5 text-5xl text-orange-500"></i>
-                <p class="mt-2 text-sm font-bold">HTML5</p>
+            <div class="flex flex-col items-center p-4 transform hover:scale-110 transition-transform duration-300">
+                <i class="fa-brands fa-html5 text-6xl text-orange-500"></i>
+                <p class="mt-2 text-md font-bold">HTML5</p>
             </div>
     
             <!-- CSS -->
-            <div class="flex flex-col items-center p-4">
-                <i class="fa-brands fa-css3-alt text-5xl text-blue-500"></i>
-                <p class="mt-2 text-sm font-bold">CSS3</p>
+            <div class="flex flex-col items-center p-4 transform hover:scale-110 transition-transform duration-300">
+                <i class="fa-brands fa-css3-alt text-6xl text-blue-500"></i>
+                <p class="mt-2 text-md font-bold">CSS3</p>
             </div>
     
             <!-- Bootstrap -->
-            <div class="flex flex-col items-center p-4">
-                <i class="fa-brands fa-bootstrap text-5xl text-purple-600"></i>
-                <p class="mt-2 text-sm font-bold">Bootstrap</p>
+            <div class="flex flex-col items-center p-4 transform hover:scale-110 transition-transform duration-300">
+                <i class="fa-brands fa-bootstrap text-6xl text-purple-600"></i>
+                <p class="mt-2 text-md font-bold">Bootstrap</p>
             </div>
-
+    
             <!-- Git -->
-            <div class="flex flex-col items-center p-4">
-            <i class="fa-brands fa-git-alt text-5xl text-red-400"></i>
-            <p class="mt-2 text-sm font-bold">Git</p>
+            <div class="flex flex-col items-center p-4 transform hover:scale-110 transition-transform duration-300">
+                <i class="fa-brands fa-git-alt text-6xl text-red-400"></i>
+                <p class="mt-2 text-md font-bold">Git</p>
             </div>
-
+    
             <!-- Python -->
-            <div class="flex flex-col items-center p-4">
-                <i class="fa-brands fa-python text-5xl text-blue-400"></i>
-                <p class="mt-2 text-sm font-bold">Python</p>
+            <div class="flex flex-col items-center p-4 transform hover:scale-110 transition-transform duration-300">
+                <i class="fa-brands fa-python text-6xl text-blue-400"></i>
+                <p class="mt-2 text-md font-bold">Python</p>
             </div>
     
             <!-- Flask -->
-            <div class="flex flex-col items-center p-4">
-                <i class="fa-brands fa-python text-5xl text-black"></i>
-                <p class="mt-2 text-sm font-bold">Flask</p>
+            <div class="flex flex-col items-center p-4 transform hover:scale-110 transition-transform duration-300">
+                <i class="fa-brands fa-python text-6xl text-black"></i>
+                <p class="mt-2 text-md font-bold">Flask</p>
             </div>
     
             <!-- MySQL -->
-            <div class="flex flex-col items-center p-4">
-                <i class="fa-solid fa-database text-5xl text-blue-700"></i>
-                <p class="mt-2 text-sm font-bold">MySQL</p>
+            <div class="flex flex-col items-center p-4 transform hover:scale-110 transition-transform duration-300">
+                <i class="fa-solid fa-database text-6xl text-blue-700"></i>
+                <p class="mt-2 text-md font-bold">MySQL</p>
             </div>
+
+            <!-- Tkinter -->
+            <div class="flex flex-col items-center p-4 transform hover:scale-110 transition-transform duration-300">
+                <i class="fa-solid fa-code text-6xl text-green-500"></i>
+                <p class="mt-2 text-md font-bold">Tkinter</p>
+            </div>
+
         </div>
     </div>
 
 <!-- projects Page -->
     <div class="text-center my-12" id="projects">
         <h2
-            class="text-3xl font-bold text-primary uppercase tracking-wide hover:text-blue-500 transition duration-300 mb-2">
+            class="text-4xl font-bold text-primary uppercase tracking-wide hover:text-blue-500 transition duration-300 mb-4">
             Projects
         </h2>
         <div class="w-20 h-1 bg-primary mx-auto mt-2"></div>
-
-        <div class="flex flex-wrap justify-center gap-20 mt-6 w-full">
-
+    
+        <div class="flex flex-wrap justify-center gap-12 mt-10 w-full">
+    
             <!-- Student Management System Card -->
             <div
-                class="bg-white shadow-lg rounded-lg p-6 w-full sm:w-1/3 hover:scale-105 transition-transform duration-300">
+                class="bg-white shadow-lg rounded-xl p-6 w-full sm:w-1/3 hover:shadow-2xl hover:scale-105 transition-transform duration-300">
                 <img src="/static/images/sms.webp" alt="Student Management System"
-                    class="w-full h-40 object-cover rounded-lg">
-                <h3 class="text-xl font-bold mt-4">Student Management System</h3>
-                <p class="text-gray-600 mt-2">A system to manage student information, including registration, grades, and
-                    performance tracking.</p>
-                <a href="https://github.com/Mohanad-Ahmed-2002/student-system" class="inline-block mt-4 px-6 py-2 text-white bg-blue-500 rounded-full hover:bg-blue-600 focus:outline-none transition duration-300">View
-                    Project</a>
+                    class="w-full h-48 object-cover rounded-xl">
+                <h3 class="text-2xl font-bold mt-4 text-primary">Student Management System</h3>
+                <p class="text-gray-700 mt-2 leading-relaxed">
+                    A system to manage student information, including <span
+                        class="font-bold text-blue-500">registration</span>,
+                    <span class="font-bold text-blue-500">grades</span>, and performance tracking.
+                </p>
+                <a href="https://github.com/Mohanad-Ahmed-2002/student-system"
+                    class="inline-block mt-4 px-6 py-2 text-white bg-primary rounded-full hover:bg-blue-600 focus:outline-none transition-all duration-300">
+                    <i class="fa-brands fa-github mr-2"></i> View Project
+                </a>
             </div>
-
+    
             <!-- Employee Management System Card -->
             <div
-                class="bg-white shadow-lg rounded-lg p-6 w-full sm:w-1/3 hover:scale-105 transition-transform duration-300">
+                class="bg-white shadow-lg rounded-xl p-6 w-full sm:w-1/3 hover:shadow-2xl hover:scale-105 transition-transform duration-300">
                 <img src="/static/images/ems.avif" alt="Employee Management System"
-                    class="w-full h-40 object-cover rounded-lg">
-                <h3 class="text-xl font-bold mt-4">Employee Management System</h3>
-                <p class="text-gray-600 mt-2">A system to manage employee data, including attendance, payroll, and
-                    performance tracking.</p>
-                <a href="https://github.com/Mohanad-Ahmed-2002/Employee-System" class="inline-block mt-4 px-6 py-2 text-white bg-blue-500 rounded-full hover:bg-blue-600 focus:outline-none transition duration-300">View
-                    Project</a>
+                    class="w-full h-48 object-cover rounded-xl">
+                <h3 class="text-2xl font-bold mt-4 text-primary">Employee Management System</h3>
+                <p class="text-gray-700 mt-2 leading-relaxed">
+                    A system to manage employee data, including <span class="font-bold text-blue-500">attendance</span>,
+                    <span class="font-bold text-blue-500">payroll</span>, and performance tracking.
+                </p>
+                <a href="https://github.com/Mohanad-Ahmed-2002/Employee-System"
+                    class="inline-block mt-4 px-6 py-2 text-white bg-primary rounded-full hover:bg-blue-600 focus:outline-none transition-all duration-300">
+                    <i class="fa-brands fa-github mr-2"></i> View Project
+                </a>
             </div>
-
+    
         </div>
     </div>
 
+
 <!-- About Page -->
-    <div class="text-center my-12" id="about">
+    <div class="min-h-screen flex flex-col items-center justify-center bg-gray-100 py-16" id="about">
         <h2
-            class="text-3xl font-bold text-primary uppercase tracking-wide hover:text-blue-500 transition duration-300 mb-2">
+            class="text-4xl font-bold text-primary uppercase tracking-wide hover:text-blue-500 transition duration-300 mb-6">
             About Me
         </h2>
-        <div class="w-20 h-1 bg-primary mx-auto mt-2"></div>
-        <div class="flex flex-col-reverse md:flex-row items-center mt-8">
-            <!-- Text -->
-            <div class="md:w-2/3 p-4 text-center bg-gradient-to-r from-black/35 to-transparent">
-                <p class="text-lg text-gray-700 leading-relaxed mt-4 font-bold justify-center">
-                    <span class="text-2xl font-large text-gray-800">I am Mohanad Ahmed</span>, a student at Akhbar Al-Youm
-                    Academy in the Faculty of Computer Science and Information Technology. I am dedicated to studying and
-                    enhancing my skills in programming and information technology, and I have obtained a certification in
-                    <strong class="text-blue-500">"Mastering of Python."</strong> I am currently seeking an internship
-                    opportunity in the field of Software Development, where I aim to strengthen my practical skills. With one
-                    year remaining until my graduation, I am focusing on specializing in Backend Development and am eager to
-                    apply what I have learned in a real-world setting.
+        <div class="w-20 h-1 bg-primary mx-auto mb-12"></div>
+    
+        <div class="flex flex-col-reverse md:flex-row items-center gap-8 w-full max-w-5xl px-6">
+    
+            <!-- Text Section -->
+            <div class="md:w-2/3 p-6 text-center md:text-left bg-white rounded-lg shadow-md">
+                <p class="text-lg text-gray-800 leading-relaxed">
+                    <span class="text-3xl font-extrabold text-primary">I am Mohanad Ahmed</span>, a student at
+                    <strong>Akhbar Al-Youm Academy</strong> in the Faculty of
+                    <strong>Computer Science and Information Technology.</strong>
+                    I am dedicated to studying and enhancing my skills in programming and IT.
+                    I have obtained a certification in <strong>"Mastering Python Fundamentals."</strong>
+                    Currently, I am seeking an internship in <strong>Software Development</strong>, where I can apply my skills
+                    practically.
+                    With one year remaining until my graduation, I am focused on specializing in
+                    <strong>Backend Development</strong> and applying what I have learned in real-world projects.
                 </p>
             </div>
-        
-            <!-- Image -->
-            <div class="md:w-1/3 p-4 justify-right">
-                <img src="/static/images/about.avif" alt="Mohanad Ahmed" class="w-full h-auto rounded-lg shadow-lg">
-            </div>
-        </div>
 
+            <!-- img Section -->
+            <div class="md:w-1/3 p-4">
+                <img src="/static/images/mooo.jpeg" alt="Mohanad Ahmed"
+                    class="w-full h-auto rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 object-cover">
+            </div>
+
+        </div>
     </div>
 
 <!-- Contact Page -->
-    <div class="w-3/4 mx-auto p-6 bg-gradient-to-r from-black/15 to-transparent rounded-lg shadow-lg flex justify-between items-center "
+    <div class="w-full max-w-5xl mx-auto p-8 bg-gradient-to-r from-black/15 to-transparent rounded-2xl shadow-lg flex flex-col md:flex-row justify-between items-center gap-6"
         id="contact">
-        <p class="text-2xl text-gray-700 font-bold">
-            Contact me to bring your project to life!
-        </p>
+    
+        <!-- نص التواصل -->
+        <div class="text-center md:text-left">
+            <p class="text-3xl text-primary font-extrabold">
+                Contact me to bring your project to life!
+            </p>
+            <p class="text-lg text-gray-600 mt-2">
+                Let's discuss your next big idea and make it happen together.
+            </p>
+        </div>
+    
+        <!-- زر التواصل -->
         <a href="mailto:mohanadahmed092@gmail.com"
-            class="btn btn-outline btn-primary flex items-center gap-2 w-150 transition duration-300">
+            class="btn btn-outline btn-primary flex items-center gap-2 px-8 py-3 text-lg font-bold transition-all duration-300 hover:bg-primary hover:text-white">
+            <i class="fa-solid fa-envelope text-xl"></i>
             Contact Me
         </a>
     </div>
     <br>
 <!-- Footer -->
-    <div class="w-full py-4 bg-gray-800 text-white text-center">
-        <p class="text-sm mb-4">
-            © 2025 Mohanad Ahmed. All Rights Reserved.
-        </p>
-        <div class="flex justify-center space-x-6">
-            <a href="https://www.linkedin.com/in/mohanad-ahmed" target="_blank"
-                class="text-white hover:text-blue-500 transition duration-300">
-                <i class="fab fa-linkedin fa-2x"></i>
-            </a>
-            <a href="https://github.com/Mohanad-Ahmed-2002" target="_blank"
-                class="text-white hover:text-gray-500 transition duration-300">
-                <i class="fab fa-github fa-2x"></i>
-            </a>
-        </div>
-    </div>
+    <footer class="w-full py-2 bg-gray-900 text-white text-center">
+            <p class="text-xs text-gray-400 mb-2">
+                © 2025 Mohanad Ahmed. All Rights Reserved.
+            </p>
+        
+            <!-- Social Icons -->
+            <div class="flex justify-center space-x-4">
+                <a href="https://www.linkedin.com/in/mohanad-ahmed" target="_blank"
+                    class="text-white hover:text-blue-500 transition-transform transform hover:scale-110 duration-300">
+                    <i class="fab fa-linkedin fa-xl"></i>
+                </a>
+                <a href="https://github.com/Mohanad-Ahmed-2002" target="_blank"
+                    class="text-white hover:text-gray-500 transition-transform transform hover:scale-110 duration-300">
+                    <i class="fab fa-github fa-xl"></i>
+                </a>
+            </div>
+    </footer>
+
 </body>
+
 </html>
