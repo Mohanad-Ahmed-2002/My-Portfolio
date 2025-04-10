@@ -12,30 +12,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
     <!-- ربط ملف الـ CSS الخاص بالموبايل -->
     <link rel="stylesheet" href="/static/css/style.css">
+    <!-- AOS Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 
 <body class="bg-gray-200 min-h-screen"> 
 
 <!-- nav -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="bg-[rgb(17,24,39)] text-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center py-4 px-6">
             <!-- الشعار (Logo) -->
-            <a href="#" class="text-2xl font-bold text-primary">
+            <a href="#" class="text-3xl font-bold text-white animate-pulse">
                 <h1>MA</h1>
             </a>
 
             <!-- زر القائمة للأجهزة الصغيرة -->
-            <button id="menu-btn" class="md:hidden text-primary focus:outline-none">
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none">
                 ☰
             </button>
 
             <!-- روابط الـ Navbar -->
             <div id="menu-links" class="hidden md:flex gap-6">
-                <a href="#home" class="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">Home</a>
-                <a href="#skills" class="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">Skills</a>
-                <a href="#projects" class="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">Projects</a>
-                <a href="#about" class="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">About</a>
-                <a href="#contact" class="text-gray-800 hover:text-primary border-b-2 border-transparent hover:border-primary transition-all duration-300">Contact</a>
+                <a href="#home" class="text-white-800 hover:text-white border-b-2 border-transparent hover:border-primary transition-all duration-300">Home</a>
+                <a href="#skills" class="text-white-800 hover:text-white border-b-2 border-transparent hover:border-primary transition-all duration-300">Skills</a>
+                <a href="#projects" class="text-white-800 hover:text-white border-b-2 border-transparent hover:border-primary transition-all duration-300">Projects</a>
+                <a href="#about" class="text-white-800 hover:text-white border-b-2 border-transparent hover:border-primary transition-all duration-300">About</a>
+                <a href="#contact" class="text-white-800 hover:text-white border-b-2 border-transparent hover:border-primary transition-all duration-300">Contact</a>
             </div>
         </div>
         <!-- قائمة الجوال -->
@@ -57,20 +60,24 @@
     </nav>
 
 <!-- Home Page -->
-    <div class="container mx-auto px-8 py-16" id="home">
-        <div class="grid grid-cols-1 sm:grid-cols-3 items-center bg-white shadow-lg rounded-2xl overflow-hidden">
-            <div class="p-8 col-span-2 bg-gradient-to-r from-black/25 to-transparent">
-                <h1 class="text-5xl font-extrabold text-primary sm:text-4xl drop-shadow-md"> Mohanad Ahmed Khalil</h1>
-                <p class="text-gray-800 mt-4 leading-relaxed font-medium">
+    <!-- Home Section -->
+    <div class="container mx-auto px-6 sm:px-8 py-16" id="home">
+        <div class="grid grid-cols-1 sm:grid-cols-3 items-center bg-silver shadow-lg rounded-2xl overflow-hidden">
+            <!-- Text Section -->
+            <div class="p-6 sm:p-8 col-span-2 bg-gradient-to-br from-primary/10 via-white to-primary/10 rounded-l-2xl">
+                <h1 data-aos="fade-up"
+                    class="text-3xl sm:text-5xl font-extrabold text-primary drop-shadow-md text-center sm:text-left">
+                    Mohanad Ahmed Khalil
+                </h1>
+                <p data-aos="fade-up" data-aos-delay="100"
+                    class="text-gray-800 mt-4 leading-relaxed font-medium text-center sm:text-left">
                     I am a self-taught programmer with a keen interest in computer science, dedicated to creating
-                    innovative, user-friendly
-                    web solutions. Currently, I am focusing on my studies and education to become a backend developer while
-                    continuing my
-                    university education in Computer Science. My goal is to work on impactful projects that improve user
-                    experience and
-                    contribute to the tech community.
+                    innovative, user-friendly web solutions. Currently, I am focusing on my studies to become a backend
+                    developer while continuing my university education in Computer Science.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+    
+                <div data-aos="zoom-in" data-aos-delay="200"
+                    class="flex flex-col sm:flex-row justify-center sm:justify-start gap-4 mt-8">
                     <a href="https://www.linkedin.com/in/mohanad-ahmed-ab66b7342/" target="_blank"
                         class="btn btn-outline btn-primary flex items-center gap-2 w-full sm:w-auto hover:bg-primary hover:text-white transition-all duration-300 shadow-md">
                         <i class="fab fa-linkedin text-xl"></i> LinkedIn
@@ -79,81 +86,93 @@
                         class="btn btn-outline btn-primary flex items-center gap-2 w-full sm:w-auto hover:bg-primary hover:text-white transition-all duration-300 shadow-md">
                         <i class="fab fa-github text-xl"></i> GitHub
                     </a>
-                    <a href="/static/files/resume 2025.pdf" download
+                    <a href="/static/files/Mohanad-Ahmed-Khalil-FlowCV-Resume-20250318.pdf" download
                         class="btn btn-outline btn-primary flex items-center gap-2 w-full sm:w-auto hover:bg-primary hover:text-white transition-all duration-300 shadow-md">
                         <i class="fa-solid fa-file-arrow-down text-xl"></i> CV
                     </a>
                 </div>
-
-
             </div>
+    
+            <!-- Image Section -->
             <div class="h-full relative">
-                <img src="/static/images/background 1.jpg" alt="Mohanad Ahmed" class="w-full object-cover rounded-r-2xl hover:scale-105 transition-transform duration-500 ease-in-out shadow-md">
+                <img src="/static/images/background 1.jpg" alt="Mohanad Ahmed"
+                    class="w-full object-cover rounded-r-2xl hover:scale-105 transition-transform duration-500 ease-in-out shadow-md">
             </div>
         </div>
     </div>
 
 <!-- Skills Page -->
-    <div class="min-h-screen flex flex-col items-center justify-center bg-gray-100 py-16" id="skills">
-        <h2
-            class="text-4xl font-bold text-primary uppercase tracking-wide hover:text-blue-500 transition duration-300 mb-6">
-            Skills
-        </h2>
-        <div class="w-16 h-1 bg-primary mx-auto mb-12"></div>
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-extrabold text-primary uppercase tracking-wider mb-2 aos-init" data-aos="fade-down">
+                Skills
+            </h2>
+            <div class="w-16 h-1 bg-primary mx-auto mb-12 aos-init" data-aos="fade-up"></div>
     
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-16 w-full max-w-5xl px-6">
-            <!-- HTML -->
-            <div class="flex flex-col items-center p-4 transform hover:scale-110 transition-transform duration-300">
-                <i class="fa-brands fa-html5 text-6xl text-orange-500"></i>
-                <p class="mt-2 text-md font-bold">HTML5</p>
-            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 max-w-6xl mx-auto">
+                <!-- Skill Item -->
+                <div class="flex flex-col items-center p-4 rounded-xl hover:scale-110 transition duration-300 shadow-md bg-white aos-init"
+                    data-aos="zoom-in">
+                    <i class="fa-brands fa-html5 text-6xl text-orange-500"></i>
+                    <p class="mt-2 font-semibold">HTML5</p>
+                </div>
     
-            <!-- CSS -->
-            <div class="flex flex-col items-center p-4 transform hover:scale-110 transition-transform duration-300">
-                <i class="fa-brands fa-css3-alt text-6xl text-blue-500"></i>
-                <p class="mt-2 text-md font-bold">CSS3</p>
-            </div>
+                <div class="flex flex-col items-center p-4 rounded-xl hover:scale-110 transition duration-300 shadow-md bg-white aos-init"
+                    data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fa-brands fa-css3-alt text-6xl text-blue-500"></i>
+                    <p class="mt-2 font-semibold">CSS3</p>
+                </div>
     
-            <!-- Bootstrap -->
-            <div class="flex flex-col items-center p-4 transform hover:scale-110 transition-transform duration-300">
-                <i class="fa-brands fa-bootstrap text-6xl text-purple-600"></i>
-                <p class="mt-2 text-md font-bold">Bootstrap</p>
-            </div>
+                <div class="flex flex-col items-center p-4 rounded-xl hover:scale-110 transition duration-300 shadow-md bg-white aos-init"
+                    data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fa-brands fa-bootstrap text-6xl text-purple-600"></i>
+                    <p class="mt-2 font-semibold">Bootstrap</p>
+                </div>
     
-            <!-- Git -->
-            <div class="flex flex-col items-center p-4 transform hover:scale-110 transition-transform duration-300">
-                <i class="fa-brands fa-git-alt text-6xl text-red-400"></i>
-                <p class="mt-2 text-md font-bold">Git</p>
-            </div>
+                <div class="flex flex-col items-center p-4 rounded-xl hover:scale-110 transition duration-300 shadow-md bg-white aos-init"
+                    data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fa-brands fa-git-alt text-6xl text-red-400"></i>
+                    <p class="mt-2 font-semibold">Git</p>
+                </div>
     
-            <!-- Python -->
-            <div class="flex flex-col items-center p-4 transform hover:scale-110 transition-transform duration-300">
-                <i class="fa-brands fa-python text-6xl text-blue-400"></i>
-                <p class="mt-2 text-md font-bold">Python</p>
-            </div>
+                <div class="flex flex-col items-center p-4 rounded-xl hover:scale-110 transition duration-300 shadow-md bg-white aos-init"
+                    data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fa-brands fa-python text-6xl text-blue-400"></i>
+                    <p class="mt-2 font-semibold">Python</p>
+                </div>
     
-            <!-- Flask -->
-            <div class="flex flex-col items-center p-4 transform hover:scale-110 transition-transform duration-300">
-                <i class="fa-brands fa-python text-6xl text-black"></i>
-                <p class="mt-2 text-md font-bold">Flask</p>
-            </div>
+                <div class="flex flex-col items-center p-4 rounded-xl hover:scale-110 transition duration-300 shadow-md bg-white aos-init"
+                    data-aos="zoom-in" data-aos-delay="500">
+                    <i class="fa-brands fa-python text-6xl text-black"></i>
+                    <p class="mt-2 font-semibold">Flask</p>
+                </div>
     
-            <!-- MySQL -->
-            <div class="flex flex-col items-center p-4 transform hover:scale-110 transition-transform duration-300">
-                <i class="fa-solid fa-database text-6xl text-blue-700"></i>
-                <p class="mt-2 text-md font-bold">MySQL</p>
-            </div>
+                <div class="flex flex-col items-center p-4 rounded-xl hover:scale-110 transition duration-300 shadow-md bg-white aos-init"
+                    data-aos="zoom-in" data-aos-delay="600">
+                    <i class="fa-solid fa-database text-6xl text-blue-700"></i>
+                    <p class="mt-2 font-semibold">MySQL</p>
+                </div>
+    
+                <div class="flex flex-col items-center p-4 rounded-xl hover:scale-110 transition duration-300 shadow-md bg-white aos-init"
+                    data-aos="zoom-in" data-aos-delay="700">
+                    <i class="fa-solid fa-code text-6xl text-green-500"></i>
+                    <p class="mt-2 font-semibold">Tkinter</p>
+                </div>
 
-            <!-- Tkinter -->
-            <div class="flex flex-col items-center p-4 transform hover:scale-110 transition-transform duration-300">
-                <i class="fa-solid fa-code text-6xl text-green-500"></i>
-                <p class="mt-2 text-md font-bold">Tkinter</p>
-            </div>
+                <!-- Django -->
+                <div class="flex flex-col items-center p-4 rounded-xl hover:scale-110 transition duration-300 shadow-md bg-white aos-init"
+                    data-aos="zoom-in" data-aos-delay="700">
+                    <i class="fab fa-django text-6xl text-black-700"></i>
+                    <p class="mt-2 font-semibold">Djnago</p>
+                </div>
 
+            </div>
         </div>
-    </div>
+    </section>
 
-<!-- projects Page -->
+
+    <!-- projects Page -->
     <div class="text-center my-12" id="projects">
         <h2
             class="text-4xl font-bold text-primary uppercase tracking-wide hover:text-blue-500 transition duration-300 mb-4">
@@ -161,11 +180,11 @@
         </h2>
         <div class="w-20 h-1 bg-primary mx-auto mt-2"></div>
     
-        <div class="flex flex-wrap justify-center gap-12 mt-10 w-full">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 mt-10 w-full px-6">
     
             <!-- Student Management System Card -->
             <div
-                class="bg-white shadow-lg rounded-xl p-6 w-full sm:w-1/3 hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+                class="bg-white shadow-lg rounded-xl p-6 hover:shadow-2xl hover:scale-105 transition-transform duration-300">
                 <img src="/static/images/sms.webp" alt="Student Management System"
                     class="w-full h-48 object-cover rounded-xl">
                 <h3 class="text-2xl font-bold mt-4 text-primary">Student Management System</h3>
@@ -182,7 +201,7 @@
     
             <!-- Employee Management System Card -->
             <div
-                class="bg-white shadow-lg rounded-xl p-6 w-full sm:w-1/3 hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+                class="bg-white shadow-lg rounded-xl p-6 hover:shadow-2xl hover:scale-105 transition-transform duration-300">
                 <img src="/static/images/ems.avif" alt="Employee Management System"
                     class="w-full h-48 object-cover rounded-xl">
                 <h3 class="text-2xl font-bold mt-4 text-primary">Employee Management System</h3>
@@ -196,9 +215,27 @@
                 </a>
             </div>
     
+            <!-- ECOMMERCE MO OPTICS Card -->
+            <div
+                class="bg-white shadow-lg rounded-xl p-6 hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+                <img src="/static/images/mo optics.jpeg" alt="Ecommerce MO Optics"
+                    class="w-full h-48 object-cover rounded-xl">
+                <h3 class="text-2xl font-bold mt-4 text-primary">Ecommerce MO Optics</h3>
+                <p class="text-gray-700 mt-2 leading-relaxed">
+                    Designed and implemented a comprehensive ecommerce platform for MO-OPTICS that ensures efficient
+                    processing of customer
+                    orders from browsing to delivery, with a focus on a seamless user experience and intuitive navigation,
+                    allowing
+                    customers to shop with ease and confidence.
+                </p>
+                <a href="https://mo-optics.onrender.com"
+                    class="inline-block mt-4 px-6 py-2 text-white bg-primary rounded-full hover:bg-blue-600 focus:outline-none transition-all duration-300">
+                    <i class="fa-brands fa-github mr-2"></i> View Project
+                </a>
+            </div>
+    
         </div>
     </div>
-
 
 <!-- About Page -->
     <div class="min-h-screen flex flex-col items-center justify-center bg-gray-100 py-16" id="about">
@@ -208,29 +245,30 @@
         </h2>
         <div class="w-20 h-1 bg-primary mx-auto mb-12"></div>
     
-        <div class="flex flex-col-reverse md:flex-row items-center gap-8 w-full max-w-5xl px-6">
+        <div class="flex flex-col md:flex-row items-center gap-12 w-full max-w-5xl px-6">
     
             <!-- Text Section -->
-            <div class="md:w-2/3 p-6 text-center md:text-left bg-white rounded-lg shadow-md">
+            <div
+                class="md:w-2/3 p-6 text-center md:text-left bg-white rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105 hover:shadow-xl">
                 <p class="text-lg text-gray-800 leading-relaxed">
                     <span class="text-3xl font-extrabold text-primary">I am Mohanad Ahmed</span>, a student at
                     <strong>Akhbar Al-Youm Academy</strong> in the Faculty of
                     <strong>Computer Science and Information Technology.</strong>
                     I am dedicated to studying and enhancing my skills in programming and IT.
                     I have obtained a certification in <strong>"Mastering Python Fundamentals."</strong>
-                    Currently, I am seeking an internship in <strong>Software Development</strong>, where I can apply my skills
-                    practically.
-                    With one year remaining until my graduation, I am focused on specializing in
+                    Currently, I am seeking an internship in <strong>Software Development</strong>, where I can apply my
+                    skills
+                    practically. With one year remaining until my graduation, I am focused on specializing in
                     <strong>Backend Development</strong> and applying what I have learned in real-world projects.
                 </p>
             </div>
-
-            <!-- img Section -->
+    
+            <!-- Image Section -->
             <div class="md:w-1/3 p-4">
-                <img src="/static/images/mooo.jpeg" alt="Mohanad Ahmed"
+                <img src="/static/images/about image.HEIC" alt="Mohanad Ahmed"
                     class="w-full h-auto rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 object-cover">
             </div>
-
+    
         </div>
     </div>
 
@@ -274,6 +312,15 @@
                 </a>
             </div>
     </footer>
+
+    <!-- AOS Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // المدة بالملي ثانية
+            once: true      // مرة واحدة فقط عند أول ظهور
+        });
+    </script>
 
 </body>
 
